@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {robots} from "./data/robots";
 import SearchBox from "./components/searchBox/searchBox.component";
 import CardList from "./components/cardList/cardList.component";
+import "./App.css";
 
 interface AppState {
 	robots: typeof robots;
@@ -18,13 +19,14 @@ class App extends Component<{}, AppState> {
 	}
 
 	onSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-		this.setState({searchField: event.target.value});
+		const {value} = event.target;
+		this.setState({searchField: value});
 	};
 
 	render() {
 		return (
 				<div className="tc">
-					<h1>RoboFriends</h1>
+					<h1 className="f1">RoboFriends</h1>
 					<SearchBox
 							onChangeHandler={this.onSearchChange}
 							value={this.state.searchField}

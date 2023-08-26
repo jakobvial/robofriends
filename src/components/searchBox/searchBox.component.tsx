@@ -1,11 +1,11 @@
-import {ChangeEvent} from "react";
+import {ChangeEvent, FC} from "react";
 
 type SearchBoxProps = {
 	onChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 	value: string;
 }
 
-const SearchBox = ({onChangeHandler, value}: SearchBoxProps) => (
+const SearchBox: FC<SearchBoxProps> = ({onChangeHandler, value}) => (
 		<div className="pa2">
 			<input
 					className="pa3 ba b--green bg-lightest-blue br4"
