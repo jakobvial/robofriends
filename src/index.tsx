@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"; // Connection library between React and
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "tachyons";
-import App from "./App";
+import App from "./containers/App";
 
 const root = ReactDOM.createRoot(
 		document.getElementById("root") as HTMLElement
