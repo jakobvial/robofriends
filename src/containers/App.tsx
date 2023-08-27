@@ -3,6 +3,7 @@ import SearchBox from "../components/searchBox/searchBox.component";
 import CardList from "../components/cardList/cardList.component";
 import "./App.css";
 import Scroll from "../components/scroll/scroll.component";
+import {ErrorBoundary} from "react-error-boundary";
 
 interface Robot {
 	id: number;
@@ -58,7 +59,11 @@ class App extends Component<{}, AppState> {
 									onChangeHandler={this.onSearchChange}
 									value={searchField}
 							/>
-							<Scroll><CardList robots={filteredRobots}/></Scroll>
+							<Scroll>
+								<ErrorBoundary fallback={<h1 className="f1">Something went wrong.</h1>}>
+									<CardList robots={filteredRobots}/>
+								</ErrorBoundary>
+							</Scroll>
 						</div>
 				);
 	}
